@@ -20,11 +20,15 @@
         <p class="p2" id="p2">Rank</p>
         <p class="p3" id="p3">Punishments amount: 0</p>
     </div>
+    <div class="Actions">
+        <h1>Punishments Control (NOT WORKING/NOT DONE)</h1>
+        <button id="TempRankL">Temporary Ranklock</button>
+    </div>
     <script>
         const errorh = document.getElementById("ErrorHandler2");
         const user = document.getElementById("UsernameInput");
         const checkbtn = document.getElementById("CheckBtn");
-        const users = ["vitalik987123", "Sansisthebest17", "MrGames8177"];
+        const users = ["vitalik987123", "Sansisthebest17", "MrGames8177", "2013_AJo"];
         const username = document.getElementById("p1");
         const rank = document.getElementById("p2");
         const punish = document.getElementById("p3");
@@ -35,26 +39,29 @@
             if (user === "vitalik987123") {
                 rank.textContent = "UOE // Owner";
                 rank.style.color = "red";
-                username.textContent = user;
+                username.textContent = "vitalik987123 (thefinalbacon)";
                 punish.textContent = "This user cannot have any punishments.";
             } else if (user === "Sansisthebest17") {
                 rank.textContent = "LR // Elite Staff Officer";
-                username.textContent = user;
+                username.textContent = "Sansisthebest17 (PurifiedSans_NL)";
                 punish.textContent = "Punishments amount: 0";
             } else if (user === "MrGames8177") {
                 rank.textContent = "HR // Chief";
                 rank.style.color = "darkblue";
-                username.textContent = user;
-            }
+                username.textContent = "MrGames8177 (Blu3Th1ng)";
+            } else if (user === "2013_AJo"){
+                rank.textContent = "Raider";
+                rank.style.color = "darkred";
+                username.textContent = "2013_AJo (Clutch)";
+                punish.textContent = "PUNISHMENT ACTIVE: Temporary ranklocked!";
+                punish.style.color = "red";
+            };
         }
 
         checkbtn.addEventListener("click", function() {
             const content = user.value.trim();
             if (content !== "" && !users.includes(content)) {
-                users.push(content);
-                errorh.textContent = "The user wasn't found in the database. Adding the user to the database.";
-                errorh.style.color = "green"; // Set color to green for success
-                console.log(users);
+                errorh.textContent = "The user wasn't found in the database. Contact the owner and ask him to add the player into database.";
             } else if (content !== "" && users.includes(content)) {
                 getRank(content);
                 errorh.textContent = "User found in the database.";
