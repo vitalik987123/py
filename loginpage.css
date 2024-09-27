@@ -1,0 +1,37 @@
+body p{
+    font-size: 60px;
+}
+body{
+    background-color: grey;
+}
+div #user2{
+    background-color: aqua;
+    font-size: 30px;
+}
+div #adminkey{
+    background-color: red;
+    font-size: 30px;
+}
+div #adminpubkey{
+    background-color: green;
+    font-size: 30px;
+}
+div #login{
+    opacity: 100%;
+    font-size: 25px;
+    background-color: greenyellow;
+}
+div{
+    background-color: yellow;
+    border: 7px solid blue;
+    border-radius: 10px;
+    border-style: dashed;
+}
+#block{
+    background-color: red;
+}
+#href{
+    font-size: 40px;
+    color: greenyellow;
+    opacity: 0%;
+}

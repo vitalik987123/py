@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRL Admin Login</title>
+    <link rel="stylesheet" href="loginpage.css">
+</head>
+<body>
+    <p style="color: greenyellow" id="p">Login to enter website.</p>
+    <div id="info">
+        <input type="text" placeholder="Username" id="user2">
+        <input type="text" placeholder="Admin Key" id="adminkey">
+        <input type="text" placeholder="Admin Public Key" id="adminpubkey">
+        <button id="login">Login</button>
+        <a href="website.html" id="href">Enter Website</a>
+    </div>
+    <div id="block" style="opacity: 0%">
+        <p>This session has been blocked by auto-moderation because of suspicious activity.</p>
+    </div>
+    <script>
+        const login = document.getElementById("login");
+        const key = document.getElementById("adminkey");
+        const pubkey = document.getElementById("adminpubkey");
+        const username = document.getElementById("user2");
+        const p = document.getElementById("p");
+        const div = document.getElementById("info");
+        const blockdiv = document.getElementById("block");
+        const hrf = document.getElementById("href");
+        let pass = false;
+        let publckey = "AdminPUBLICkey00x1184f9299a848xp30oSSRL848x29xxf9aquality48manager8383MOF";
+        let tries = 0;
+
+        login.addEventListener("click", function() {
+            if (username.value === "vitalik987123" && key.value === "AbC76ssRLhighQUAL00x34f1TORTURtouNOPIROalasoTamayoRAsOADMINLOGINKEY" && pubkey.value === publckey) {
+                pass = true;
+            } else if (username.value === "AdminQualityBLU" && key.value === "aternosONUs1x00x49abb94999994SSrQaliutywit38dth" && pubkey.value === publckey) {
+                pass = true;
+            } else {
+                p.style.color = "red";
+                p.textContent = "Invalid information - login failed.";
+                tries += 1;
+                console.log(tries);
+            }
+            if (tries > 3) {
+                div.style.opacity = "0%";
+                blockdiv.style.opacity = "100%";
+            }
+
+            if (pass === true) {
+                hrf.style.opacity = "100%";
+                div.style.opacity = "0%";
+            }
+        });
+    </script>
+</body>
+</html>
